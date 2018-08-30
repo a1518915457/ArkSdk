@@ -22,15 +22,15 @@ namespace ArkSdk.Util
 
             // 2.使用QueryString的格式（即key1=value1&key2=value2…）拼接字符串和URL（不包含host部分）
             // 3.连接app-secret的值在最末尾，至此为签名原始字符串
-            List<string> parameters = new List<string>();
-            foreach (KeyValuePair<string, string> kv in sortedParams)
+            List<string> queries = new List<string>();
+            foreach (KeyValuePair<string, string> p in sortedParams)
             {
-                if (!string.IsNullOrEmpty(kv.Key) && !string.IsNullOrEmpty(kv.Value))
+                if (!string.IsNullOrEmpty(p.Key) && !string.IsNullOrEmpty(p.Value))
                 {
-                    parameters.Add(kv.Key + "=" + kv.Value);
+                    queries.Add(p.Key + "=" + p.Value);
                 }
             }
-            string queryString = string.Join("&", parameters);
+            string queryString = string.Join("&", queries);
             string s = url + "?" + queryString + appSecret;
 
             // 4.MD5计算签名
