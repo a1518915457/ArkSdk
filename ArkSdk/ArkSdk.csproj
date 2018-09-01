@@ -49,7 +49,9 @@
     <Compile Include="IArkClient.cs" />
     <Compile Include="IArkRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\PackageGetRequest.cs" />
     <Compile Include="Request\PackagesGetRequest.cs" />
+    <Compile Include="Response\PackageGetResponse.cs" />
     <Compile Include="Response\PackagesGetResponse.cs" />
     <Compile Include="Util\ArkUtils.cs" />
     <Compile Include="Util\Hash.cs" />
