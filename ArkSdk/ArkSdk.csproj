@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArkDictionary.cs" />
+    <Compile Include="ArkResponse.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DefaultArkClient.cs" />
+    <Compile Include="IArkClient.cs" />
+    <Compile Include="IArkRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ArkUtils.cs" />
     <Compile Include="Util\Hash.cs" />
