@@ -42,13 +42,13 @@ namespace ArkSdk
             sysParams.Add("sign", ArkUtils.SignArkRequest(url, reqParams, sysParams, appSecret));
 
             string realServerUrl = serverUrl + url;
-            string body = GetResponse(realServerUrl, request.GetMethod(), reqParams, sysParams);
+            string body = GetResponse(realServerUrl, request.GetMethod(), reqParams, sysParams, request.GetBody());
             T rsp = Activator.CreateInstance<T>();
             rsp.Body = body;
             return rsp;
         }
 
-        private string GetResponse(string url, string method, IDictionary<string, string> reqParams, IDictionary<string, string> sysParams)
+        private string GetResponse(string url, string method, IDictionary<string, string> reqParams, IDictionary<string, string> sysParams, string body)
         {
             List<string> queries = new List<string>();
             foreach (KeyValuePair<string, string> p in reqParams)
@@ -70,6 +70,16 @@ namespace ArkSdk
                 if (!string.IsNullOrEmpty(p.Key) && !string.IsNullOrEmpty(p.Value))
                 {
                     req.Headers[p.Key] = p.Value;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(body) && (method == "POST" || method == "PUT" || method == "PATCH"))
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(body);
+                req.ContentLength = bytes.Length;
+                using (Stream stream = req.GetRequestStream())
+                {
+                    stream.Write(bytes, 0, bytes.Length);
                 }
             }
 

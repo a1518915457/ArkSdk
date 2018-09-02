@@ -8,8 +8,21 @@ namespace ArkSdk
 {
     public abstract class BaseArkRequest<T> : IArkRequest<T> where T : ArkResponse
     {
-        public abstract string GetMethod();
-        public abstract IDictionary<string, string> GetParameters();
+        public virtual string GetBody()
+        {
+            return "";
+        }
+
+        public virtual string GetMethod()
+        {
+            return "GET";
+        }
+
+        public virtual IDictionary<string, string> GetParameters()
+        {
+            return new ArkDictionary();
+        }
+
         public abstract string GetUrl();
     }
 }

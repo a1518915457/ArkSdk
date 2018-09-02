@@ -4,6 +4,8 @@ namespace ArkSdk
 {
     public interface IArkRequest<out T> where T : ArkResponse
     {
+        string GetBody();
+
         string GetUrl();
 
         string GetMethod();
