@@ -6,10 +6,10 @@ namespace ArkSdk
     {
         string GetBody();
 
-        string GetUrl();
-
         string GetMethod();
 
         IDictionary<string, string> GetParameters();
+
+        string GetUrl();
     }
 }
