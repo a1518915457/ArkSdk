@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace ArkSdk.JsonConverters
 {
+    /// <summary>
+    /// 代码来自
+    /// https://stackoverflow.com/questions/33088462/can-i-specify-a-path-in-an-attribute-to-map-a-property-in-my-class-to-a-child-pr
+    /// </summary>
     public class JsonPathConverter : JsonConverter
     {
         public override bool CanWrite
