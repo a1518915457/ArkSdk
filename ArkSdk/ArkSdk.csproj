@@ -45,12 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArkDictionary.cs" />
+    <Compile Include="ArkObject.cs" />
     <Compile Include="ArkResponse.cs" />
     <Compile Include="BaseArkRequest.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DefaultArkClient.cs" />
+    <Compile Include="Domain\Item.cs" />
+    <Compile Include="Domain\Package.cs" />
     <Compile Include="IArkClient.cs" />
     <Compile Include="IArkRequest.cs" />
+    <Compile Include="JsonConverters\JsonPathConverter.cs" />
+    <Compile Include="JsonConverters\MyUnixDateTimeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\PackageGetRequest.cs" />
     <Compile Include="Request\PackageSendRequest.cs" />

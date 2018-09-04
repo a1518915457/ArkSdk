@@ -1,21 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Xml.Serialization;
 
 namespace ArkSdk
 {
-    [Serializable]
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class ArkResponse
     {
-        [XmlElement("success")]
+        [JsonProperty("success")]
         public bool Success { get; set; }
 
-        [XmlElement("data")]
-        public string Data { get; set; }
-
-        [XmlElement("error_code")]
+        [JsonProperty("error_code")]
         public string ErrorCode { get; set; }
 
-        [XmlElement("error_msg")]
+        [JsonProperty("error_msg")]
         public string ErrorMsg { get; set; }
 
         public string Body { get; set; }

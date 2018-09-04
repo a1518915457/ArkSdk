@@ -1,4 +1,5 @@
 ﻿using ArkSdk.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,7 +44,7 @@ namespace ArkSdk
 
             string realServerUrl = serverUrl + url;
             string body = GetResponse(realServerUrl, request.GetMethod(), reqParams, sysParams, request.GetBody());
-            T rsp = Activator.CreateInstance<T>();
+            T rsp = JsonConvert.DeserializeObject<T>(body);
             rsp.Body = body;
             return rsp;
         }
