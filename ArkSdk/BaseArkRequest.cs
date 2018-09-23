@@ -24,5 +24,7 @@ namespace ArkSdk
         }
 
         public abstract string GetUrl();
+
+        public abstract void Validate();
     }
 }

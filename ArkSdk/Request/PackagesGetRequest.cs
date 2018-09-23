@@ -41,5 +41,9 @@ namespace ArkSdk.Request
         {
             return "/ark/open_api/v0/packages";
         }
+
+        public override void Validate()
+        {
+        }
     }
 }

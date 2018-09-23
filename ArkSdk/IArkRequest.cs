@@ -11,5 +11,7 @@ namespace ArkSdk
         IDictionary<string, string> GetParameters();
 
         string GetUrl();
+
+        void Validate();
     }
 }

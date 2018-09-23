@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArkSdk.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,11 @@ namespace ArkSdk.Request
         public override string GetUrl()
         {
             return "/ark/open_api/v0/packages/" + PackageId;
+        }
+
+        public override void Validate()
+        {
+            RequestValidator.ValidateRequired("package_id", this.PackageId);
         }
     }
 }

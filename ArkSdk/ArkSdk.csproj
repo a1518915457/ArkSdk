@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArkDictionary.cs" />
+    <Compile Include="ArkException.cs" />
     <Compile Include="ArkObject.cs" />
     <Compile Include="ArkResponse.cs" />
     <Compile Include="BaseArkRequest.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Response\PackagesGetResponse.cs" />
     <Compile Include="Util\ArkUtils.cs" />
     <Compile Include="Util\Hash.cs" />
+    <Compile Include="Util\RequestValidator.cs" />
     <Compile Include="Util\UnixTime.cs" />
   </ItemGroup>
   <ItemGroup>

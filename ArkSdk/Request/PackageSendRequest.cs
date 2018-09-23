@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ArkSdk.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,14 @@ namespace ArkSdk.Request
         public override string GetUrl()
         {
             return "/ark/open_api/v0/packages/" + PackageId;
+        }
+
+        public override void Validate()
+        {
+            RequestValidator.ValidateRequired("package_id", this.PackageId);
+            RequestValidator.ValidateRequired("status", this.Status);
+            RequestValidator.ValidateRequired("express_company_code", this.ExpressCompanyCode);
+            RequestValidator.ValidateRequired("express_no", this.ExpressNo);
         }
     }
 }
